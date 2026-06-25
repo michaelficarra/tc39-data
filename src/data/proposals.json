@@ -795,8 +795,8 @@
     "stage": "2.7",
     "authors": [
       {
-        "kind": "community",
-        "name": "Alexander J. Vincent"
+        "kind": "delegate",
+        "abbreviation": "AVT"
       }
     ],
     "champions": [
@@ -997,8 +997,8 @@
     "stage": "2",
     "authors": [
       {
-        "kind": "community",
-        "name": "J. S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       },
       {
         "kind": "community",
@@ -1015,8 +1015,8 @@
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J. S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       },
       {
         "kind": "delegate",
@@ -1118,8 +1118,8 @@
         "abbreviation": "RRD"
       },
       {
-        "kind": "community",
-        "name": "Richard Button"
+        "kind": "delegate",
+        "abbreviation": "RBU"
       },
       {
         "kind": "delegate",
@@ -3112,16 +3112,16 @@
         "abbreviation": "MM"
       },
       {
-        "kind": "community",
-        "name": "J.F. Paradis"
+        "kind": "delegate",
+        "abbreviation": "JFP"
       },
       {
         "kind": "delegate",
         "abbreviation": "CP"
       },
       {
-        "kind": "community",
-        "name": "Dan Finley"
+        "kind": "delegate",
+        "abbreviation": "DJF"
       },
       {
         "kind": "delegate",
@@ -3134,16 +3134,16 @@
         "abbreviation": "MM"
       },
       {
-        "kind": "community",
-        "name": "J.F. Paradis"
+        "kind": "delegate",
+        "abbreviation": "JFP"
       },
       {
         "kind": "delegate",
         "abbreviation": "CP"
       },
       {
-        "kind": "community",
-        "name": "Dan Finley"
+        "kind": "delegate",
+        "abbreviation": "DJF"
       },
       {
         "kind": "delegate",
@@ -3249,8 +3249,8 @@
         "abbreviation": "CP"
       },
       {
-        "kind": "community",
-        "name": "J.F. Paradis"
+        "kind": "delegate",
+        "abbreviation": "JFP"
       },
       {
         "kind": "delegate",
@@ -3426,14 +3426,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "presentations": [
@@ -3501,14 +3501,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "presentations": [
@@ -3580,14 +3580,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "presentations": [
@@ -3630,14 +3630,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -3709,14 +3709,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -3809,14 +3809,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "J. S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J. S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -3941,14 +3941,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       },
       {
         "kind": "delegate",
@@ -3970,14 +3970,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       },
       {
         "kind": "delegate",
@@ -4261,14 +4261,14 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "HE Shi-Jun"
+        "kind": "delegate",
+        "abbreviation": "JHX"
       }
     ],
     "presentations": [
@@ -4374,8 +4374,8 @@
         "abbreviation": "NVP"
       },
       {
-        "kind": "community",
-        "name": "Milo M"
+        "kind": "delegate",
+        "abbreviation": "MLM"
       },
       {
         "kind": "community",
@@ -4752,8 +4752,8 @@
     "stage": "1",
     "authors": [
       {
-        "kind": "community",
-        "name": "Zbyszek Tenerowicz"
+        "kind": "delegate",
+        "abbreviation": "ZTZ"
       },
       {
         "kind": "delegate",
@@ -4770,8 +4770,8 @@
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "Zbyszek Tenerowicz"
+        "kind": "delegate",
+        "abbreviation": "ZTZ"
       },
       {
         "kind": "delegate",
@@ -5503,12 +5503,12 @@
         "abbreviation": "PDL"
       },
       {
-        "kind": "community",
-        "name": "Maggie Johnson-Pint"
+        "kind": "delegate",
+        "abbreviation": "MPT"
       },
       {
-        "kind": "community",
-        "name": "Matt Johnson-Pint"
+        "kind": "delegate",
+        "abbreviation": "MAJ"
       },
       {
         "kind": "delegate",
@@ -5541,12 +5541,12 @@
         "abbreviation": "PDL"
       },
       {
-        "kind": "community",
-        "name": "Maggie Johnson-Pint"
+        "kind": "delegate",
+        "abbreviation": "MPT"
       },
       {
-        "kind": "community",
-        "name": "Matt Johnson-Pint"
+        "kind": "delegate",
+        "abbreviation": "MAJ"
       },
       {
         "kind": "delegate",
@@ -5617,8 +5617,8 @@
     "stage": "4",
     "authors": [
       {
-        "kind": "community",
-        "name": "Daniel Minor"
+        "kind": "delegate",
+        "abbreviation": "DLM"
       },
       {
         "kind": "community",
@@ -5643,8 +5643,8 @@
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "Daniel Minor"
+        "kind": "delegate",
+        "abbreviation": "DLM"
       }
     ],
     "presentations": [
@@ -5941,14 +5941,14 @@
     "stage": "4",
     "authors": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -6883,8 +6883,8 @@
         "abbreviation": "DE"
       },
       {
-        "kind": "community",
-        "name": "Richard Button"
+        "kind": "delegate",
+        "abbreviation": "RBU"
       },
       {
         "kind": "delegate",
@@ -6909,8 +6909,8 @@
         "abbreviation": "DE"
       },
       {
-        "kind": "community",
-        "name": "Richard Button"
+        "kind": "delegate",
+        "abbreviation": "RBU"
       },
       {
         "kind": "delegate",
@@ -9247,8 +9247,8 @@
     "authors": [],
     "champions": [
       {
-        "kind": "community",
-        "name": "J. S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -9289,8 +9289,8 @@
     "authors": [],
     "champions": [
       {
-        "kind": "community",
-        "name": "J.S. Choi"
+        "kind": "delegate",
+        "abbreviation": "JSC"
       }
     ],
     "presentations": [
@@ -9433,8 +9433,8 @@
     "authors": [],
     "champions": [
       {
-        "kind": "community",
-        "name": "Benjamin Coe"
+        "kind": "delegate",
+        "abbreviation": "BCE"
       }
     ],
     "presentations": [
@@ -9575,8 +9575,8 @@
         "abbreviation": "RRD"
       },
       {
-        "kind": "community",
-        "name": "Richard Button"
+        "kind": "delegate",
+        "abbreviation": "RBU"
       }
     ],
     "presentations": [
@@ -9800,12 +9800,6 @@
         "date": "2021-01",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2021-01/jan-27.md#eradisplay-for-stage-1"
       }
-    ],
-    "stage27Reviewers": [
-      {
-        "kind": "community",
-        "name": ":question:"
-      }
     ]
   },
   {
@@ -9830,12 +9824,6 @@
       {
         "date": "2024-12",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2024-12/december-02.md#more-currency-display-choices"
-      }
-    ],
-    "stage27Reviewers": [
-      {
-        "kind": "community",
-        "name": ":question:"
       }
     ]
   },
