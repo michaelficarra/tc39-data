@@ -56,6 +56,8 @@
     "import:affiliations": "node --import tsx scripts/import/affiliations.ts",
     "import:all": "npm run import:delegates && npm run import:proposals && npm run import:stages && npm run import:affiliations",
     "validate": "node --import tsx scripts/validate.ts",
+    "format": "node --import tsx scripts/format.ts",
+    "format:check": "node --import tsx scripts/format.ts --check",
     "site:dev": "npm --prefix site run dev",
     "site:build": "npm run build && npm --prefix site run build"
   },
