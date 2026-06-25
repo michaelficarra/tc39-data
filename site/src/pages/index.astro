@@ -2,7 +2,9 @@
 import Base from "../layouts/Base.astro";
 import { proposals, delegates } from "../lib/data.ts";
 
-const base = import.meta.env.BASE_URL;
+// Strip any trailing slash so we can append path segments without doubling or
+// dropping the separator; see the note in `layouts/Base.astro`.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 // Kept as a string so Astro renders its braces and quotes as literal text
 // rather than interpreting them as JSX expressions.
@@ -33,11 +35,11 @@ processStages; // the maturity-stage definitions`;
   </p>
 
   <div class="cards">
-    <a class="card" href={`${base}proposals`}>
+    <a class="card" href={`${base}/proposals`}>
       <div class="num">{proposals.length}</div>
       <div class="label">proposals</div>
     </a>
-    <a class="card" href={`${base}delegates`}>
+    <a class="card" href={`${base}/delegates`}>
       <div class="num">{Object.keys(delegates).length}</div>
       <div class="label">delegates</div>
     </a>

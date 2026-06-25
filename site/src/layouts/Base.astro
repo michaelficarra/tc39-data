@@ -4,12 +4,15 @@ interface Props {
   description?: string;
 }
 const { title, description } = Astro.props;
-const base = import.meta.env.BASE_URL;
+// `BASE_URL` may or may not carry a trailing slash depending on how `base` is
+// configured (GitHub Pages' base_path has none); normalise to a slash-free
+// prefix so we can append path segments without dropping or doubling slashes.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const path = Astro.url.pathname.replace(/\/$/, "");
 const nav = [
-  { href: base, label: "Overview", match: base.replace(/\/$/, "") },
-  { href: `${base}proposals`, label: "Proposals", match: `${base}proposals`.replace(/\/$/, "") },
-  { href: `${base}delegates`, label: "Delegates", match: `${base}delegates`.replace(/\/$/, "") },
+  { href: `${base}/`, label: "Overview", match: base },
+  { href: `${base}/proposals`, label: "Proposals", match: `${base}/proposals` },
+  { href: `${base}/delegates`, label: "Delegates", match: `${base}/delegates` },
 ];
 ---
 
@@ -26,7 +29,7 @@ const nav = [
     <a href="#content" class="skip-link">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a href={base} class="brand">TC39 <span>Data</span></a>
+        <a href={`${base}/`} class="brand">TC39 <span>Data</span></a>
         <nav aria-label="Primary">
           <ul>
             {
