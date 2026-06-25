@@ -1,0 +1,158 @@
+---
+import Base from "../layouts/Base.astro";
+import { delegates } from "../lib/data.ts";
+
+const rows = Object.entries(delegates)
+  .map(([abbreviation, { name, github, affiliation }]) => ({
+    abbreviation,
+    name,
+    github: github ?? "",
+    affiliation: affiliation ?? "",
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name, "en"));
+
+const withAffiliation = rows.filter((r) => r.affiliation).length;
+const withGithub = rows.filter((r) => r.github).length;
+---
+
+<Base title="Delegates" description="The TC39 delegate roster with official abbreviations.">
+  <h1>Delegates</h1>
+  <p class="lede">
+    Official TC39 delegate abbreviations, full names, affiliations, and GitHub accounts
+    ({rows.length} delegates; {withAffiliation} with a known affiliation, {withGithub} with a GitHub account).
+  </p>
+
+  <form class="controls" role="search" aria-label="Filter delegates">
+    <div class="field">
+      <label for="search">Search</label>
+      <input type="search" id="search" placeholder="name, abbreviation, affiliation, or GitHub…" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label class="checkbox-label">
+        <input type="checkbox" id="active-only" checked />
+        Active only
+      </label>
+    </div>
+    <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="table-wrap">
+    <table id="delegates-table">
+      <caption class="visually-hidden">TC39 delegates, sortable by column</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="sortable" aria-sort="ascending" data-key="name" data-type="string">
+            <button type="button">Name</button>
+          </th>
+          <th scope="col" class="sortable" aria-sort="none" data-key="abbr" data-type="string">
+            <button type="button">Abbreviation</button>
+          </th>
+          <th scope="col" class="sortable" aria-sort="none" data-key="affiliation" data-type="string">
+            <button type="button">Affiliation</button>
+          </th>
+          <th scope="col" class="sortable" aria-sort="none" data-key="github" data-type="string">
+            <button type="button">GitHub</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <tr
+              data-search={`${r.name} ${r.abbreviation} ${r.affiliation} ${r.github}`.toLowerCase()}
+              data-name={r.name.toLowerCase()}
+              data-abbr={r.abbreviation}
+              data-affiliation={r.affiliation.toLowerCase()}
+              data-github={r.github.toLowerCase()}
+            >
+              <th scope="row">{r.name}</th>
+              <td><code>{r.abbreviation}</code></td>
+              <td>{r.affiliation || <span class="muted">—</span>}</td>
+              <td>
+                {r.github ? (
+                  <a href={`https://github.com/${r.github}`} rel="noopener">
+                    @{r.github}
+                  </a>
+                ) : (
+                  <span class="muted">—</span>
+                )}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const table = document.getElementById("delegates-table") as HTMLTableElement;
+    const tbody = table.tBodies[0]!;
+    const headers = [...table.querySelectorAll<HTMLTableCellElement>("th.sortable")];
+    const search = document.getElementById("search") as HTMLInputElement;
+    const activeOnly = document.getElementById("active-only") as HTMLInputElement;
+    const count = document.getElementById("result-count")!;
+
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      const onlyActive = activeOnly.checked;
+      let visible = 0;
+      for (const row of tbody.rows) {
+        // "Active" means the delegate has a (non-empty) affiliation.
+        const isActive = (row.dataset.affiliation ?? "") !== "";
+        const ok = (!q || (row.dataset.search ?? "").includes(q)) && (!onlyActive || isActive);
+        row.hidden = !ok;
+        if (ok) visible++;
+      }
+      count.textContent = `${visible} of ${tbody.rows.length} delegates`;
+    }
+
+    function sortBy(key: string, dir: "asc" | "desc") {
+      const rows = [...tbody.rows];
+      rows.sort((a, b) => {
+        const cmp = (a.dataset[key] ?? "").localeCompare(b.dataset[key] ?? "", "en");
+        return dir === "asc" ? cmp : -cmp;
+      });
+      for (const row of rows) tbody.appendChild(row);
+    }
+
+    for (const th of headers) {
+      th.querySelector("button")!.addEventListener("click", () => {
+        const dir = th.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
+        for (const other of headers) other.setAttribute("aria-sort", "none");
+        th.setAttribute("aria-sort", dir);
+        sortBy(th.dataset.key!, dir === "ascending" ? "asc" : "desc");
+      });
+    }
+
+    search.addEventListener("input", applyFilters);
+    activeOnly.addEventListener("change", applyFilters);
+    applyFilters();
+  </script>
+
+  <style>
+    /* Placeholder shown for delegates with no known affiliation. */
+    .muted {
+      color: var(--muted);
+    }
+
+    /* "Active only" toggle: a native checkbox beside its label, aligned with the
+       search input (padding matches .field input so they sit on the same line). */
+    .checkbox-label {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      padding-block: 0.45rem;
+    }
+    .checkbox-label input {
+      inline-size: auto;
+      min-inline-size: 0; /* override the 12rem min-width from the global .field input rule */
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      accent-color: var(--accent);
+    }
+  </style>
+</Base>

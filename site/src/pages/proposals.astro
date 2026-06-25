@@ -1,0 +1,324 @@
+---
+import Base from "../layouts/Base.astro";
+import {
+  proposals,
+  peopleNames,
+  lastPresented,
+  formatNameHtml,
+  STAGE_ORDER,
+} from "../lib/data.ts";
+
+const rows = proposals
+  .map((p) => ({
+    id: p.id,
+    nameHtml: formatNameHtml(p.name),
+    // Plain (backtick-free) name for the disclosure button's screen-reader label.
+    plainName: p.name.replace(/`/g, ""),
+    url: p.url,
+    spec: p.specification,
+    stage: p.stage,
+    stageOrder: STAGE_ORDER[p.stage] ?? 99,
+    champions: peopleNames(p.champions),
+    // Fields surfaced only in the expandable detail panel:
+    authors: peopleNames(p.authors),
+    presentations: p.presentations,
+    test262: p.test262,
+    reviewers: peopleNames(p.stage27Reviewers ?? []),
+    rationale: p.rationale,
+    year: p.expectedPublicationYear,
+    last: lastPresented(p),
+    search: `${p.name} ${peopleNames(p.champions)} ${peopleNames(p.authors)} ${p.id}`.toLowerCase(),
+  }))
+  // Default order: most recently presented first, ties broken by id.
+  .sort((a, b) => b.last.localeCompare(a.last, "en") || a.id.localeCompare(b.id));
+
+const stages = ["0", "1", "2", "2.7", "3", "4", "rejected", "withdrawn", "abandoned", "subsumed"];
+// Stages pre-selected when the page loads.
+const defaultStages = new Set(["1", "2", "2.7", "3"]);
+const specs = ["ECMA-262", "ECMA-402", "ECMA-404", "ECMA-426"];
+
+const columns = [
+  { key: "name", type: "string", label: "Proposal" },
+  { key: "spec", type: "string", label: "Spec" },
+  { key: "stage", type: "number", label: "Status" },
+  { key: "last", type: "string", label: "Last presented" },
+];
+---
+
+<Base title="Proposals" description="Browse, filter, and sort every TC39 proposal.">
+  <h1>Proposals</h1>
+  <p class="lede">Every ECMA-262 and ECMA-402 proposal across all stages and terminal statuses.</p>
+
+  <form class="controls" role="search" aria-label="Filter proposals">
+    <div class="field">
+      <label for="search">Search</label>
+      <input type="search" id="search" placeholder="name, champion, author…" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label for="filter-spec">Specification</label>
+      <select id="filter-spec">
+        <option value="">All</option>
+        {specs.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </div>
+    <fieldset class="field stage-field" id="filter-stage">
+      <legend>Status</legend>
+      <div class="chip-group">
+        {
+          stages.map((s) => (
+            <label class="chip">
+              <input type="checkbox" name="stage" value={s} checked={defaultStages.has(s)} />
+              <span class={`badge stage-${s}`}>{/^\d/.test(s) ? `Stage ${s}` : s}</span>
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+    <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="table-wrap">
+    <table id="proposals-table">
+      <caption class="visually-hidden">
+        TC39 proposals, sortable by column. Activate a row to reveal its full details.
+      </caption>
+      <thead>
+        <tr>
+          {
+            columns.map((c) => (
+              <th
+                scope="col"
+                class="sortable"
+                aria-sort={c.key === "last" ? "descending" : "none"}
+                data-key={c.key}
+                data-type={c.type}
+              >
+                <button type="button">{c.label}</button>
+              </th>
+            ))
+          }
+          <th scope="col">Champions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((r) => (
+            <Fragment>
+              <tr
+                class="proposal-row"
+                data-search={r.search}
+                data-spec={r.spec}
+                data-stagelabel={r.stage}
+                data-name={r.id}
+                data-stage={r.stageOrder}
+                data-last={r.last}
+              >
+                <th scope="row">
+                  <button
+                    type="button"
+                    class="row-toggle"
+                    aria-expanded="false"
+                    aria-controls={`detail-${r.id}`}
+                  >
+                    <span class="visually-hidden">Toggle details for {r.plainName}</span>
+                  </button>
+                  {r.url ? (
+                    <a href={r.url} set:html={r.nameHtml} />
+                  ) : (
+                    <span set:html={r.nameHtml} />
+                  )}
+                </th>
+                <td>{r.spec.replace(/^ECMA-/, "")}</td>
+                <td>
+                  <span class={`badge stage-${r.stage}`}>
+                    {/^\d/.test(r.stage) ? `Stage ${r.stage}` : r.stage}
+                  </span>
+                </td>
+                <td>{r.last || "—"}</td>
+                <td>{r.champions || "—"}</td>
+              </tr>
+              <tr class="detail-row" id={`detail-${r.id}`} hidden>
+                <td colspan="5">
+                  <div class="detail-panel">
+                    <dl>
+                      {r.authors && (
+                        <Fragment>
+                          <dt>Authors</dt>
+                          <dd>{r.authors}</dd>
+                        </Fragment>
+                      )}
+                      {r.presentations.length > 0 && (
+                        <Fragment>
+                          <dt>Presentations</dt>
+                          <dd>
+                            <ul class="presentation-list">
+                              {r.presentations.map((pres) => (
+                                <li>
+                                  {pres.notesUrl ? (
+                                    <a href={pres.notesUrl}>{pres.date}</a>
+                                  ) : (
+                                    pres.date
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          </dd>
+                        </Fragment>
+                      )}
+                      {r.year != null && (
+                        <Fragment>
+                          <dt>Expected publication year</dt>
+                          <dd>{r.year}</dd>
+                        </Fragment>
+                      )}
+                      {r.test262 && (
+                        <Fragment>
+                          <dt>Test262</dt>
+                          <dd>
+                            {r.test262.hasTests ? "Has tests" : "No tests"}
+                            {r.test262.featureFlag && (
+                              <Fragment>
+                                {" · flag "}
+                                <code>{r.test262.featureFlag}</code>
+                              </Fragment>
+                            )}
+                            {r.test262.url && (
+                              <Fragment>
+                                {" · "}
+                                <a href={r.test262.url}>test search</a>
+                              </Fragment>
+                            )}
+                          </dd>
+                        </Fragment>
+                      )}
+                      {r.reviewers && (
+                        <Fragment>
+                          <dt>Stage 2.7 reviewers</dt>
+                          <dd>{r.reviewers}</dd>
+                        </Fragment>
+                      )}
+                      {r.rationale && (
+                        <Fragment>
+                          <dt>Rationale</dt>
+                          <dd>{r.rationale}</dd>
+                        </Fragment>
+                      )}
+                      <dt>Identifier</dt>
+                      <dd>
+                        <code>{r.id}</code>
+                      </dd>
+                      {r.url && (
+                        <Fragment>
+                          <dt>Repository</dt>
+                          <dd>
+                            <a href={r.url}>{r.url}</a>
+                          </dd>
+                        </Fragment>
+                      )}
+                    </dl>
+                  </div>
+                </td>
+              </tr>
+            </Fragment>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const table = document.getElementById("proposals-table") as HTMLTableElement;
+    const tbody = table.tBodies[0]!;
+    const headers = [...table.querySelectorAll<HTMLTableCellElement>("th.sortable")];
+    const search = document.getElementById("search") as HTMLInputElement;
+    const specSel = document.getElementById("filter-spec") as HTMLSelectElement;
+    const stageBoxes = [
+      ...document.querySelectorAll<HTMLInputElement>('#filter-stage input[name="stage"]'),
+    ];
+    const count = document.getElementById("result-count")!;
+
+    // Each proposal is a `.proposal-row` paired with a following `.detail-row` panel,
+    // linked by id (`detail-<id>`). Cache the main rows; their count is the denominator.
+    const proposalRows = [...tbody.querySelectorAll<HTMLTableRowElement>("tr.proposal-row")];
+    const detailFor = (row: HTMLTableRowElement) =>
+      document.getElementById("detail-" + row.dataset.name) as HTMLTableRowElement | null;
+    const isExpanded = (row: HTMLTableRowElement) =>
+      row.querySelector(".row-toggle")!.getAttribute("aria-expanded") === "true";
+
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      const spec = specSel.value;
+      // An empty set means no stage filter is applied, so every stage is shown.
+      const stages = new Set(stageBoxes.filter((b) => b.checked).map((b) => b.value));
+      let visible = 0;
+      for (const row of proposalRows) {
+        const ok =
+          (!q || (row.dataset.search ?? "").includes(q)) &&
+          (!spec || row.dataset.spec === spec) &&
+          (stages.size === 0 || stages.has(row.dataset.stagelabel ?? ""));
+        row.hidden = !ok;
+        // The detail panel follows its row's visibility, but stays collapsed unless expanded.
+        // Expansion state lives on the button alone, so a filtered-out row reopens unchanged.
+        const detail = detailFor(row);
+        if (detail) detail.hidden = !ok || !isExpanded(row);
+        if (ok) visible++;
+      }
+      count.textContent = `${visible} of ${proposalRows.length} proposals`;
+    }
+
+    function sortBy(key: string, type: string, dir: "asc" | "desc") {
+      const rows = [...proposalRows];
+      rows.sort((a, b) => {
+        const av = a.dataset[key] ?? "";
+        const bv = b.dataset[key] ?? "";
+        let cmp: number;
+        if (type === "number") {
+          const an = av === "" ? Infinity : Number(av);
+          const bn = bv === "" ? Infinity : Number(bv);
+          cmp = an - bn;
+        } else if (av === "" || bv === "") {
+          cmp = av === bv ? 0 : av === "" ? 1 : -1; // empty values sort last
+        } else {
+          cmp = av.localeCompare(bv, "en");
+        }
+        return dir === "asc" ? cmp : -cmp;
+      });
+      // Re-append each proposal row followed by its own detail row to keep the pair adjacent
+      // and preserve its open/closed state across re-sorts.
+      for (const row of rows) {
+        tbody.appendChild(row);
+        const detail = detailFor(row);
+        if (detail) tbody.appendChild(detail);
+      }
+    }
+
+    // One delegated handler toggles a row's panel. Clicks on a link (the title, or links inside
+    // the panel) fall through so navigation still works; the disclosure button bubbles here too,
+    // so mouse and keyboard activation share a single code path (and never double-toggle).
+    tbody.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a")) return;
+      const row = target.closest<HTMLTableRowElement>("tr.proposal-row");
+      if (!row) return;
+      const btn = row.querySelector(".row-toggle")!;
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      const detail = detailFor(row);
+      if (detail) detail.hidden = expanded;
+    });
+
+    for (const th of headers) {
+      th.querySelector("button")!.addEventListener("click", () => {
+        const dir = th.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
+        for (const other of headers) other.setAttribute("aria-sort", "none");
+        th.setAttribute("aria-sort", dir);
+        sortBy(th.dataset.key!, th.dataset.type!, dir === "ascending" ? "asc" : "desc");
+      });
+    }
+
+    search.addEventListener("input", applyFilters);
+    specSel.addEventListener("input", applyFilters);
+    for (const box of stageBoxes) box.addEventListener("change", applyFilters);
+    applyFilters();
+  </script>
+</Base>

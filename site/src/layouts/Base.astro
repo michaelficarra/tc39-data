@@ -1,0 +1,463 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const path = Astro.url.pathname.replace(/\/$/, "");
+const nav = [
+  { href: base, label: "Overview", match: base.replace(/\/$/, "") },
+  { href: `${base}proposals`, label: "Proposals", match: `${base}proposals`.replace(/\/$/, "") },
+  { href: `${base}delegates`, label: "Delegates", match: `${base}delegates`.replace(/\/$/, "") },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | TC39 Data</title>
+    {description && <meta name="description" content={description} />}
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href={base} class="brand">TC39 <span>Data</span></a>
+        <nav aria-label="Primary">
+          <ul>
+            {
+              nav.map((item) => (
+                <li>
+                  <a href={item.href} aria-current={path === item.match ? "page" : undefined}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="content" tabindex="-1" class="container">
+      <slot />
+    </main>
+
+    <style is:global>
+      :root {
+        --bg: #ffffff;
+        --surface: #f6f7f9;
+        --border: #d8dce2;
+        --text: #1b1f24;
+        --muted: #5b6470;
+        --accent: #2b59c3;
+        --accent-contrast: #ffffff;
+        --radius: 8px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14171c;
+          --surface: #1d2127;
+          --border: #2f353d;
+          --text: #e7eaee;
+          --muted: #9aa3af;
+          --accent: #7aa0ff;
+          --accent-contrast: #0d0f13;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+      }
+      .container {
+        width: min(100% - 2rem, 72rem);
+        margin-inline: auto;
+      }
+      a {
+        color: var(--accent);
+      }
+      :where(a, button, input, select):focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .skip-link {
+        position: absolute;
+        left: 0.5rem;
+        top: -3rem;
+        background: var(--accent);
+        color: var(--accent-contrast);
+        padding: 0.5rem 0.75rem;
+        border-radius: var(--radius);
+        transition: top 0.15s;
+        z-index: 10;
+      }
+      .skip-link:focus {
+        top: 0.5rem;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        z-index: 5;
+      }
+      .header-inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        align-items: center;
+        padding-block: 0.75rem;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-decoration: none;
+        color: var(--text);
+      }
+      .brand span {
+        color: var(--accent);
+      }
+      nav[aria-label="Primary"] ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav[aria-label="Primary"] a {
+        text-decoration: none;
+        color: var(--muted);
+        padding: 0.25rem 0.25rem;
+        border-bottom: 2px solid transparent;
+      }
+      nav[aria-label="Primary"] a[aria-current="page"] {
+        color: var(--text);
+        border-bottom-color: var(--accent);
+      }
+      main {
+        padding-block: 2rem 3rem;
+      }
+      h1 {
+        font-size: clamp(1.6rem, 1.2rem + 2vw, 2.2rem);
+        margin-block: 0 0.5rem;
+      }
+      .lede {
+        color: var(--muted);
+        max-width: 60ch;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        gap: 1rem;
+        margin-block: 1.5rem;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem 1.25rem;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .card .num {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+      .card .label {
+        color: var(--muted);
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: end;
+        margin-block: 1.5rem 0.75rem;
+        padding: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .field label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .field input,
+      .field select {
+        font: inherit;
+        padding: 0.45rem 0.6rem;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--bg);
+        color: var(--text);
+        min-width: 12rem;
+      }
+      /* Stage filter: a group of toggle chips backed by hidden checkboxes. */
+      .stage-field {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        min-inline-size: 0; /* let the fieldset shrink inside the flex controls bar */
+      }
+      .stage-field legend {
+        padding: 0;
+        margin-bottom: 0.3rem; /* legend renders above the content box, so gap won't apply */
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .chip-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        max-inline-size: 24rem;
+      }
+      .chip {
+        cursor: pointer;
+      }
+      /* Keep the native checkbox accessible and focusable, but visually hidden. */
+      .chip input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+      .chip .badge {
+        cursor: pointer;
+        user-select: none;
+        opacity: 0.6; /* dimmed until selected, so an active filter stands out */
+        transition: opacity 0.12s, box-shadow 0.12s;
+      }
+      /* Reserve space for the tick so toggling doesn't shift the chips. */
+      .chip .badge::before {
+        content: "✓";
+        font-weight: 700;
+        margin-inline-end: 0.2rem;
+        opacity: 0;
+      }
+      .chip:hover .badge {
+        opacity: 0.85;
+      }
+      .chip input:checked + .badge {
+        opacity: 1;
+        box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--text) 45%, transparent);
+      }
+      .chip input:checked + .badge::before {
+        opacity: 1;
+      }
+      .chip input:focus-visible + .badge {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .result-count {
+        margin-left: auto;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 0.93rem;
+      }
+      caption {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        color: var(--muted);
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.55rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      thead th {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        white-space: nowrap;
+        z-index: 1;
+      }
+      th.sortable {
+        padding: 0;
+      }
+      th.sortable button {
+        font: inherit;
+        font-weight: 600;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        color: inherit;
+        padding: 0.55rem 0.75rem;
+        cursor: pointer;
+        display: flex;
+        gap: 0.35rem;
+        align-items: center;
+      }
+      th.sortable button::after {
+        content: "↕";
+        opacity: 0.35;
+        font-size: 0.85em;
+      }
+      th[aria-sort="ascending"] button::after {
+        content: "▲";
+        opacity: 1;
+      }
+      th[aria-sort="descending"] button::after {
+        content: "▼";
+        opacity: 1;
+      }
+      tbody tr.proposal-row:hover {
+        background: color-mix(in srgb, var(--surface) 60%, transparent);
+      }
+      /* Proposal rows expand to a detail panel on click. */
+      .proposal-row {
+        cursor: pointer;
+      }
+      .row-toggle {
+        appearance: none;
+        background: none;
+        border: 0;
+        padding: 0;
+        margin-right: 0.45rem;
+        color: var(--muted);
+        cursor: pointer;
+        font: inherit;
+        line-height: 1;
+        vertical-align: baseline;
+      }
+      .row-toggle::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7em;
+        transition: transform 0.15s ease;
+      }
+      .row-toggle[aria-expanded="true"]::before {
+        transform: rotate(90deg);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .row-toggle::before {
+          transition: none;
+        }
+      }
+      /* Tie an expanded row visually to its panel: shared tint, no divider between them. */
+      .proposal-row:has(.row-toggle[aria-expanded="true"]) {
+        background: color-mix(in srgb, var(--surface) 50%, transparent);
+      }
+      .proposal-row:has(.row-toggle[aria-expanded="true"]) > * {
+        border-bottom-color: transparent;
+      }
+      /* The expandable detail panel, rendered in a row spanning every column. */
+      .detail-row > td {
+        padding: 0;
+        background: color-mix(in srgb, var(--surface) 50%, transparent);
+      }
+      .detail-panel {
+        padding: 0.75rem 1rem 1rem 2.2rem;
+      }
+      .detail-panel dl {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 0.35rem 1rem;
+        margin: 0;
+        max-width: 70rem;
+      }
+      .detail-panel dt {
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .detail-panel dd {
+        margin: 0;
+      }
+      .presentation-list {
+        margin: 0;
+        padding-left: 1.1rem;
+        columns: 12rem;
+      }
+      @media (max-width: 32rem) {
+        .detail-panel dl {
+          grid-template-columns: 1fr;
+          gap: 0.1rem 0;
+        }
+        .detail-panel dt {
+          margin-top: 0.45rem;
+        }
+      }
+      .badge {
+        display: inline-block;
+        padding: 0.1rem 0.5rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+        border: 1px solid var(--border);
+      }
+      .stage-0,
+      .stage-1 {
+        background: color-mix(in srgb, #8a93a2 22%, transparent);
+      }
+      .stage-2,
+      .stage-2\.7 {
+        background: color-mix(in srgb, #d9a441 30%, transparent);
+      }
+      .stage-3 {
+        background: color-mix(in srgb, #3f9d58 28%, transparent);
+      }
+      .stage-4 {
+        background: color-mix(in srgb, #2b59c3 28%, transparent);
+      }
+      .stage-rejected,
+      .stage-withdrawn,
+      .stage-abandoned {
+        background: color-mix(in srgb, #c0504d 24%, transparent);
+      }
+      .stage-subsumed {
+        background: color-mix(in srgb, #8a5fbf 26%, transparent);
+      }
+      code {
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        background: color-mix(in srgb, var(--muted) 18%, transparent);
+        padding: 0.05em 0.3em;
+        border-radius: 4px;
+      }
+      .visually-hidden:where(:not(:focus-within, :active)) {
+        position: absolute !important;
+        clip-path: inset(50%) !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+      }
+    </style>
+  </body>
+</html>

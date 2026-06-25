@@ -1,0 +1,114 @@
+---
+import Base from "../layouts/Base.astro";
+import { proposals, delegates } from "../lib/data.ts";
+
+const base = import.meta.env.BASE_URL;
+
+// Kept as a string so Astro renders its braces and quotes as literal text
+// rather than interpreting them as JSX expressions.
+const usageCode = `import { proposals, delegates, processStages } from "@tc39/data";
+
+proposals;     // every ECMA-262 and ECMA-402 proposal
+delegates;     // the delegate roster, keyed by abbreviation
+processStages; // the maturity-stage definitions`;
+---
+
+<Base
+  title="Overview"
+  description="Structured, typed TC39 datasets — a single source of truth for proposals, delegates, and the process stages."
+>
+  <h1>TC39 Data</h1>
+  <p class="lede">
+    Structured, typed datasets for TC39.
+  </p>
+
+  <p>
+    Today this information is spread across semi-structured documents in several repositories:
+    proposals as Markdown tables in
+    <a href="https://github.com/tc39/proposals">tc39/proposals</a>, the delegate list in
+    <a href="https://github.com/tc39/notes/blob/main/delegates.txt">tc39/notes</a>, and the working
+    process as an HTML <a href="https://tc39.es/process-document/">process document</a>. This project
+    aggregates that information into a single, machine-readable, typed representation generated from
+    the upstream repositories and maintained by hand thereafter.
+  </p>
+
+  <div class="cards">
+    <a class="card" href={`${base}proposals`}>
+      <div class="num">{proposals.length}</div>
+      <div class="label">proposals</div>
+    </a>
+    <a class="card" href={`${base}delegates`}>
+      <div class="num">{Object.keys(delegates).length}</div>
+      <div class="label">delegates</div>
+    </a>
+  </div>
+
+  <h2>Using the data</h2>
+  <p>The three datasets are exported as typed values:</p>
+  <pre><code>{usageCode}</code></pre>
+
+  <h2>Schemas</h2>
+  <p>
+    The canonical, machine-checked definitions live in
+    <a href="https://github.com/tc39/data/blob/main/src/types.ts"><code>src/types.ts</code></a>. The
+    three datasets are shaped as follows:
+  </p>
+  <dl class="schema">
+    <dt><code>proposals</code> — <code>Proposal[]</code></dt>
+    <dd>
+      Each proposal has an immutable kebab-case <code>id</code>, a <code>name</code>,
+      <code>url</code>, and <code>specification</code> (ECMA-262 / ECMA-402 / ECMA-404); a
+      <code>stage</code> that is one of <code>0</code>–<code>4</code> or a terminal status
+      (<code>rejected</code>, <code>withdrawn</code>, <code>abandoned</code>, <code>subsumed</code>);
+      <code>authors</code> and <code>champions</code>; and the list of committee
+      <code>presentations</code>, newest first. Stage 3 / 2.7 entries may carry test262 coverage, and
+      Stage 4 entries an expected publication year.
+    </dd>
+    <dt><code>delegates</code> — <code>DelegateMap</code></dt>
+    <dd>
+      Maps each official delegate abbreviation to a record of the delegate's <code>name</code>, an
+      optional <code>github</code> username, and an optional <code>affiliation</code> (the TC39
+      member organisation they represent).
+    </dd>
+    <dt><code>processStages</code> — <code>ProcessStage[]</code></dt>
+    <dd>
+      Each maturity stage (<code>0</code>–<code>4</code>) with its <code>status</code>, the
+      <code>entranceCriteria</code> a proposal must meet to enter it, and the stage's
+      <code>purpose</code>, taken from the process document.
+    </dd>
+  </dl>
+
+  <p>
+    An author, champion, or reviewer is in turn either a TC39 delegate (referenced by the
+    abbreviation that keys into <code>delegates</code>) or a community member (a full name and
+    optional GitHub username).
+  </p>
+
+  <style>
+    .schema {
+      max-width: 70ch;
+    }
+    .schema dt {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+    .schema dd {
+      margin: 0.3rem 0 0;
+    }
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    /* Reset the inline-code chrome inside a code block. */
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+    }
+  </style>
+</Base>

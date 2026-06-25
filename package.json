@@ -1,0 +1,71 @@
+{
+  "name": "@tc39/data",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Structured, typed datasets for TC39: proposals, delegates, process stages, etc.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/tc39/data#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tc39/data.git"
+  },
+  "keywords": [
+    "tc39",
+    "ecmascript",
+    "proposals",
+    "delegates",
+    "ecma262",
+    "ecma402",
+    "ecma404",
+    "ecma426"
+  ],
+  "engines": {
+    "node": ">=20.10"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./proposals": {
+      "types": "./dist/proposals.d.ts",
+      "import": "./dist/proposals.js"
+    },
+    "./delegates": {
+      "types": "./dist/delegates.d.ts",
+      "import": "./dist/delegates.js"
+    },
+    "./process-stages": {
+      "types": "./dist/process-stages.d.ts",
+      "import": "./dist/process-stages.js"
+    },
+    "./data/*.json": "./dist/data/*.json"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && npm run build:data",
+    "build:data": "node --import tsx scripts/build-data.ts",
+    "typecheck": "tsc -p tsconfig.check.json",
+    "test": "node --import tsx --test test/*.test.ts",
+    "import:delegates": "node --import tsx scripts/import/delegates.ts",
+    "import:proposals": "node --import tsx scripts/import/proposals.ts",
+    "import:stages": "node --import tsx scripts/import/process-stages.ts",
+    "import:affiliations": "node --import tsx scripts/import/affiliations.ts",
+    "import:all": "npm run import:delegates && npm run import:proposals && npm run import:stages && npm run import:affiliations",
+    "validate": "node --import tsx scripts/validate.ts",
+    "site:dev": "npm --prefix site run dev",
+    "site:build": "npm run build && npm --prefix site run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "volta": {
+    "node": "24.14.1",
+    "npm": "11.11.0"
+  }
+}
