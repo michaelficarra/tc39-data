@@ -52,6 +52,7 @@
     "test": "node --import tsx --test test/*.test.ts",
     "import:delegates": "node --import tsx scripts/import/delegates.ts",
     "import:proposals": "node --import tsx scripts/import/proposals.ts",
+    "import:presentations": "node --import tsx scripts/import/presentations.ts",
     "import:stages": "node --import tsx scripts/import/process-stages.ts",
     "import:affiliations": "node --import tsx scripts/import/affiliations.ts",
     "import:all": "npm run import:delegates && npm run import:proposals && npm run import:stages && npm run import:affiliations",
