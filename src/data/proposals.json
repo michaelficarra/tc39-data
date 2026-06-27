@@ -81,6 +81,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#source-phase-imports-request-for-consensus-for-normative-change-ambiguous-re-export-handling-for-source-phase-imports"
+      },
+      {
         "date": "2026-01-21",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#source-phase-imports--esm-phase-imports"
       },
@@ -146,6 +150,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#dynamic-code-brand-checks-for-stage-4-or-normative-change-pr-23"
+      },
       {
         "date": "2026-01-21",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#dynamic-code-brand-checks-pt-1"
@@ -347,6 +355,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#iterator-chunking-for-stage-3"
+      },
+      {
         "date": "2025-09-22",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-09/september-22.md#iterator-chunking-for-stage-27"
       },
@@ -393,6 +405,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#iterator-includes-for-stage-3"
+      },
+      {
         "date": "2026-03-10",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-10.md#iterator-includes-for-stage-1-2-or-27"
       },
@@ -427,7 +443,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#iterator-join"
       },
       {
         "date": "2025-11-19",
@@ -458,6 +475,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#error-stack-accessor-for-stage-3"
+      },
       {
         "date": "2026-03-10",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-10.md#error-stack-accessor-for-stage-27"
@@ -496,6 +517,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#regexp-buffer-boundaries-for-stage-27-or-3"
+      },
       {
         "date": "2026-03-10",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-10.md#regexp-buffer-boundaries-for-stage-27"
@@ -546,6 +571,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#decorators-for-stage-27"
+      },
       {
         "date": "2025-11-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-20.md#decorators-status-update-request"
@@ -700,6 +729,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#decorators-continuation-decorator-metadata-to-stage-27"
+      },
       {
         "date": "2024-06-11",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2024-06/june-11.md#decorators-and-decorator-metadata"
@@ -899,6 +932,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#esm-phase-imports-normative-prs"
+      },
       {
         "date": "2026-03-11",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-11.md#update-on-esm-phase-imports"
@@ -1691,6 +1728,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#asynccontext-stage-2-web-integration-status-update"
+      },
+      {
         "date": "2025-09-23",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-09/september-23.md#asynccontext-yield"
       },
@@ -1949,6 +1990,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#export-defer-stage-2-status-update"
+      },
       {
         "date": "2026-01-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-20.md#deferred-re-exports-update"
@@ -2245,6 +2290,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#thenable-curtailment-status-update"
+      },
+      {
         "date": "2026-03-12",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-12.md#thenable-curtailment-for-stage-2"
       },
@@ -2288,7 +2337,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#amount-for-stage-2"
       },
       {
         "date": "2026-03-10",
@@ -5789,7 +5839,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#export-all-from-for-stage-1"
       }
     ]
   },
@@ -5813,7 +5864,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-21.md#comparisons-for-stage-1"
       },
       {
         "date": "2025-11-19",
@@ -6186,6 +6238,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#explicit-resource-management-stage-4-progress-update"
+      },
+      {
         "date": "2025-05-28",
         "notesUrl": "https://github.com/tc39/notes/blob/main/meetings/2025-05/may-28.md#explicit-resource-management-continuation"
       },
@@ -6284,6 +6340,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#atomicspause-for-stage-4"
+      },
+      {
         "date": "2026-01-21",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#atomicspause"
       },
@@ -6321,6 +6381,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#joint-iteration-for-stage-4"
+      },
       {
         "date": "2025-11-18",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-18.md#joint-iteration-for-stage-3"
@@ -6435,6 +6499,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#temporal-progress-update"
+      },
       {
         "date": "2026-03-11",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-11.md#temporal-for-stage-4"
@@ -11508,6 +11576,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#istemplateobject-status-update-and-possible-withdrawal"
+      },
+      {
         "date": "2026-01-21",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#istemplateobject"
       },
@@ -11594,7 +11666,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-19",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-19.md#intl-keep-trailing-zeros-for-stage-3"
       },
       {
         "date": "2026-03-10",
@@ -11903,7 +11976,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#stable-formatting-for-stage-2"
       },
       {
         "date": "2025-02-19",
@@ -11935,7 +12009,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#default-behaviours-for-some-intl-apis-for-stage-1"
       }
     ]
   },
@@ -11959,7 +12034,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-05"
+        "date": "2026-05-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#intl-sequence-units-for-stage-1-or-2"
       },
       {
         "date": "2026-03-11",
