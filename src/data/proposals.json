@@ -3337,22 +3337,6 @@
       {
         "date": "2019-01-31",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2019-01/jan-31.md#newinitialize-for-stage-1"
-      },
-      {
-        "date": "2016-07-26",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2016-07/jul-26.md#9ia-reintroduce-for-in-initializer"
-      },
-      {
-        "date": "2014-06-06",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2014-06/jun-6.md#initializer-in-for-in"
-      },
-      {
-        "date": "2014-04-10",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2014-04/apr-10.md#revisiting-initializer-in-for-in"
-      },
-      {
-        "date": "2014-04-08",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2014-04/apr-8.md#initializer-in-for-in"
       }
     ]
   },
