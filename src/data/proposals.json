@@ -878,16 +878,10 @@
         "date": "2018-05"
       },
       {
-        "date": "2018-03"
-      },
-      {
         "date": "2017-03"
       },
       {
         "date": "2017-01"
-      },
-      {
-        "date": "2016-03"
       },
       {
         "date": "2015-05"
@@ -4330,10 +4324,6 @@
       {
         "date": "2025-02-18",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-02/february-18.md#limited-arraybuffer"
-      },
-      {
-        "date": "2023-05-15",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2023-05/may-15.md#needs-consensus-3052-limit-arraybuffer-size-to-253-bytes"
       },
       {
         "date": "2021-04-21",
@@ -9168,6 +9158,10 @@
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2019-01/jan-31.md#globalthis-follow-up"
       },
       {
+        "date": "2018-07-25",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2018-07/july-25.md#revisit-global-name"
+      },
+      {
         "date": "2018-07-24",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2018-07/july-24.md#new-name-for-global"
       },
@@ -12020,7 +12014,32 @@
       {
         "date": "2026-05-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#intl-sequence-units-for-stage-1-or-2"
+      }
+    ]
+  },
+  {
+    "id": "intl-energy-units",
+    "name": "Intl Energy Units",
+    "url": "https://github.com/johanrd/proposal-intl-energy-units",
+    "specification": "ECMA-402",
+    "stage": "1",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "JRD"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "NRO"
       },
+      {
+        "kind": "delegate",
+        "abbreviation": "SFC"
+      }
+    ],
+    "presentations": [
       {
         "date": "2026-03-11",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-11.md#intl-energy-units-stage-1-update"
@@ -12753,10 +12772,6 @@
     ],
     "presentations": [
       {
-        "date": "2026-01-20",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-20.md#speakers-summary-of-key-points-9"
-      },
-      {
         "date": "2020-02-05",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2020-02/february-5.md#unified-number-format-for-stage-4"
       }
@@ -12904,10 +12919,6 @@
       }
     ],
     "presentations": [
-      {
-        "date": "2017-09-26",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2017-09/sept-26.md#12ia-intlnumberformatprototypeformattoparts-for-stage-4"
-      },
       {
         "date": "2016-07-27",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2016-07/jul-27.md#9ii-ecma-402-formattoparts"
