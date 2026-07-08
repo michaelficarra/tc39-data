@@ -466,7 +466,12 @@
         "date": "2025-11-19",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-19.md#iterator-join-for-stage-1-2-or-27"
       }
-    ]
+    ],
+    "test262": {
+      "hasTests": true,
+      "featureFlag": "iterator-join",
+      "url": "https://github.com/tc39/test262/pull/4768"
+    }
   },
   {
     "id": "error-stack-accessor",
