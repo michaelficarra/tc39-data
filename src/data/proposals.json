@@ -5806,7 +5806,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-01"
+        "date": "2026-01-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#composable-value-backed-accessors-for-stage-1"
       }
     ]
   },
@@ -9096,10 +9097,6 @@
     ],
     "presentations": [
       {
-        "date": "2021-12-14",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2021-12/dec-14.md#add-importmetasymboltostringtag"
-      },
-      {
         "date": "2020-04-01",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2020-03/april-1.md#importmeta-for-stage-4-continued-from-previous-day"
       },
@@ -10569,16 +10566,8 @@
     ],
     "presentations": [
       {
-        "date": "2016-05-23",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2016-05/may-23.md#throwing-an-error-for-returning-primitives-from-base-class-constructors"
-      },
-      {
         "date": "2016-01-28",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2016-01/jan-28.md#progress-review-callable-class-constructors-allen"
-      },
-      {
-        "date": "2015-01-27",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2015-01/jan-27.md#super-outside-class-constructor-body"
       }
     ],
     "rationale": "can be solved with decorators"
@@ -10727,10 +10716,6 @@
       {
         "date": "2017-03-23",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2017-03/mar-23.md#10iia-dynamic-module-reform-for-stage-2"
-      },
-      {
-        "date": "2016-11-29",
-        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2016-11/nov-29.md#12iid-proposal-to-reform-the-spec-to-include-default-export-in-export--from-module"
       },
       {
         "date": "2016-11-30",
@@ -11718,9 +11703,6 @@
       {
         "date": "2026-01-21",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-01/january-21.md#istemplateobject"
-      },
-      {
-        "date": "2025-05"
       },
       {
         "date": "2024-07-31",
