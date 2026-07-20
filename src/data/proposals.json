@@ -1114,7 +1114,7 @@
     "name": "Await Dictionary",
     "url": "https://github.com/tc39/proposal-await-dictionary",
     "specification": "ECMA-262",
-    "stage": "2.7",
+    "stage": "3",
     "authors": [
       {
         "kind": "delegate",
@@ -1137,6 +1137,9 @@
     ],
     "presentations": [
       {
+        "date": "2026-07"
+      },
+      {
         "date": "2025-11-18",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-18.md#await-dictionary-for-stage-2-or-27"
       },
@@ -1148,7 +1151,12 @@
         "date": "2023-03-22",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2023-03/mar-22.md#await-dictionary-for-stage-1"
       }
-    ]
+    ],
+    "test262": {
+      "hasTests": true,
+      "featureFlag": "await-dictionary",
+      "url": "https://github.com/tc39/test262/search?l=JavaScript&q=await-dictionary"
+    }
   },
   {
     "id": "function-sent",
