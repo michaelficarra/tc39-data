@@ -5903,6 +5903,30 @@
     ]
   },
   {
+    "id": "bigint-from-exponential",
+    "name": "Bigint from exponential",
+    "url": "https://github.com/tc39/proposal-bigint-from-exponential",
+    "specification": "ECMA-262",
+    "stage": "1",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "RGN"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "RGN"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
+      }
+    ]
+  },
+  {
     "id": "additional-metaproperties",
     "name": "Additional metaproperties",
     "url": "https://github.com/allenwb/ESideas/blob/HEAD/ES7MetaProps.md",
