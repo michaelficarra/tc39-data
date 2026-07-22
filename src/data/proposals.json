@@ -2425,6 +2425,44 @@
     ]
   },
   {
+    "id": "error-code-property",
+    "name": "Error code property",
+    "url": "https://github.com/tc39/proposal-error-code-property",
+    "specification": "ECMA-262",
+    "stage": "2",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "JSL"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "JSL"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
+      },
+      {
+        "date": "2026-03-11",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-11.md#error-code-property-for-stage-1-2-or-27"
+      }
+    ],
+    "stage27Reviewers": [
+      {
+        "kind": "delegate",
+        "abbreviation": "JHD"
+      },
+      {
+        "kind": "delegate",
+        "abbreviation": "RGN"
+      }
+    ]
+  },
+  {
     "id": "export-default-from",
     "name": "`export v from \"mod\";` statements",
     "url": "https://github.com/tc39/proposal-export-default-from",
@@ -5918,6 +5956,30 @@
       {
         "kind": "delegate",
         "abbreviation": "RGN"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
+      }
+    ]
+  },
+  {
+    "id": "map-getanddelete",
+    "name": "Map get and delete",
+    "url": "https://github.com/tc39/proposal-Map-getAndDelete",
+    "specification": "ECMA-262",
+    "stage": "1",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "DRO"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "DRO"
       }
     ],
     "presentations": [
