@@ -2463,6 +2463,40 @@
     ]
   },
   {
+    "id": "fma",
+    "name": "Fused Multiply-Add",
+    "url": "https://github.com/tc39/proposal-fma",
+    "specification": "ECMA-262",
+    "stage": "2",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "WH"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "WH"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
+      }
+    ],
+    "stage27Reviewers": [
+      {
+        "kind": "delegate",
+        "abbreviation": "JHD"
+      },
+      {
+        "kind": "delegate",
+        "abbreviation": "MF"
+      }
+    ]
+  },
+  {
     "id": "export-default-from",
     "name": "`export v from \"mod\";` statements",
     "url": "https://github.com/tc39/proposal-export-default-from",
@@ -3440,12 +3474,20 @@
       {
         "kind": "delegate",
         "abbreviation": "JRL"
+      },
+      {
+        "kind": "delegate",
+        "abbreviation": "KG"
       }
     ],
     "champions": [
       {
         "kind": "delegate",
         "abbreviation": "JRL"
+      },
+      {
+        "kind": "delegate",
+        "abbreviation": "KG"
       }
     ],
     "presentations": [
@@ -5980,6 +6022,30 @@
       {
         "kind": "delegate",
         "abbreviation": "DRO"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
+      }
+    ]
+  },
+  {
+    "id": "linear-matching",
+    "name": "Linear Matching",
+    "url": "https://github.com/tc39/proposal-linear-matching",
+    "specification": "ECMA-262",
+    "stage": "1",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "MF"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "MF"
       }
     ],
     "presentations": [
@@ -11935,7 +12001,7 @@
   {
     "id": "intl-currency-display-choices",
     "name": "More Currency Display Choices",
-    "url": "https://github.com/eemeli/proposal-intl-currency-display-choices",
+    "url": "https://github.com/tc39/proposal-intl-currency-display-choices",
     "specification": "ECMA-402",
     "stage": "2",
     "authors": [
@@ -12281,6 +12347,30 @@
       {
         "date": "2025-11-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-20.md#intl-energy-units-for-stage-1"
+      }
+    ]
+  },
+  {
+    "id": "intl-datetime-alignment",
+    "name": "Intl.DateTimeFormat Alignment With Other Standards",
+    "url": "https://github.com/tc39/proposal-intl-datetime-alignment",
+    "specification": "ECMA-402",
+    "stage": "1",
+    "authors": [
+      {
+        "kind": "delegate",
+        "abbreviation": "EAO"
+      }
+    ],
+    "champions": [
+      {
+        "kind": "delegate",
+        "abbreviation": "EAO"
+      }
+    ],
+    "presentations": [
+      {
+        "date": "2026-07"
       }
     ]
   },
