@@ -787,8 +787,7 @@
   },
   "GCL": {
     "name": "Gus Caplan",
-    "github": "devsnek",
-    "affiliation": "Deno Land"
+    "github": "devsnek"
   },
   "GTO": {
     "name": "Gustavo Tonietto",
@@ -853,8 +852,7 @@
   },
   "IOA": {
     "name": "Ioanna M. Dimitriou H.",
-    "github": "ioannad",
-    "affiliation": "Igalia"
+    "github": "ioannad"
   },
   "IDO": {
     "name": "Isaac Durazo",
@@ -1214,6 +1212,11 @@
     "github": "kmiller68",
     "affiliation": "Apple"
   },
+  "KOA": {
+    "name": "Kenro Oyama",
+    "github": "chadmoyashi",
+    "affiliation": "Sony Interactive Entertainment"
+  },
   "KCD": {
     "name": "Kent C. Dodds",
     "github": "kentcdodds"
@@ -1535,7 +1538,8 @@
   },
   "MP": {
     "name": "Mike Pennisi",
-    "github": "jugglinmike"
+    "github": "jugglinmike",
+    "affiliation": "Igalia"
   },
   "MSL": {
     "name": "Mike Samuel",
@@ -1575,8 +1579,7 @@
   },
   "MYC": {
     "name": "MingYuan Cheng",
-    "github": "nuanyang233",
-    "affiliation": "Sujitech"
+    "github": "nuanyang233"
   },
   "MGR": {
     "name": "Mira Gross"
@@ -1636,7 +1639,9 @@
     "name": "Niko Matsakis"
   },
   "NPU": {
-    "name": "Nikolaos Papaspyrou"
+    "name": "Nikolaos Papaspyrou",
+    "github": "nickie",
+    "affiliation": "Google"
   },
   "NTE": {
     "name": "Noah Tye",
@@ -1708,8 +1713,7 @@
   },
   "PDL": {
     "name": "Philipp Dunkel",
-    "github": "pipobscure",
-    "affiliation": "Bloomberg"
+    "github": "pipobscure"
   },
   "PGR": {
     "name": "Philippa Gardner"
@@ -1803,7 +1807,7 @@
   "RKA": {
     "name": "Riki Khorana",
     "github": "rikilele",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "RBA": {
     "name": "Rishipal Singh Bhatia",
@@ -1849,7 +1853,7 @@
   "RKG": {
     "name": "Ross Kirsling",
     "github": "rkirsling",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "RBR": {
     "name": "Ruben Bridgewater",
@@ -1869,7 +1873,7 @@
   "RHA": {
     "name": "Ryuichi Hayashida",
     "github": "rhysd",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "SBI": {
     "name": "Saam Barati",
@@ -1989,8 +1993,7 @@
   },
   "SVR": {
     "name": "Shelley Vohr",
-    "github": "codebytere",
-    "affiliation": "Microsoft"
+    "github": "codebytere"
   },
   "SJY": {
     "name": "Shi Jiang Yu",
@@ -2127,7 +2130,7 @@
   "TKI": {
     "name": "Takuya Kawasaki",
     "github": "kawa",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "TEK": {
     "name": "Tantek Çelik",
@@ -2220,7 +2223,7 @@
   "TII": {
     "name": "Tomoki Imai",
     "github": "tomoki",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "TVT": {
     "name": "Toon Verwaest"
@@ -2247,8 +2250,7 @@
   },
   "USA": {
     "name": "Ujjwal Sharma",
-    "github": "ryzokuken",
-    "affiliation": "Igalia"
+    "github": "ryzokuken"
   },
   "UGN": {
     "name": "Ulises Gascón",
@@ -2400,7 +2402,7 @@
   "ZSN": {
     "name": "Zev Solomon",
     "github": "zsolomon88",
-    "affiliation": "Sony"
+    "affiliation": "Sony Interactive Entertainment"
   },
   "ZYY": {
     "name": "Zeyu Yang"
