@@ -10527,10 +10527,6 @@
       {
         "kind": "delegate",
         "abbreviation": "JHD"
-      },
-      {
-        "kind": "community",
-        "name": "Andrea Giammarchi"
       }
     ],
     "presentations": [
@@ -10758,10 +10754,6 @@
     "stage": "rejected",
     "authors": [],
     "champions": [
-      {
-        "kind": "community",
-        "name": "David Bruant"
-      },
       {
         "kind": "delegate",
         "abbreviation": "JHD"
@@ -11210,7 +11202,7 @@
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2021-10/oct-28.md#regexp-atomic-operations"
       }
     ],
-    "rationale": "Never presented; engines are not interested in the feature, mainly because it doesn't solve backtracking for most users"
+    "rationale": "engines are not interested in the feature, mainly because it doesn't solve backtracking for most users"
   },
   {
     "id": "refcollection",
