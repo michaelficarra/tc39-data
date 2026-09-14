@@ -1137,7 +1137,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#await-dictionary-for-stage-3"
       },
       {
         "date": "2025-11-18",
@@ -2444,7 +2445,12 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#error-code-property-for-stage-2-or-27"
+      },
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#call-for-stage-2-reviewers-for-error-code-property"
       },
       {
         "date": "2026-03-11",
@@ -2482,7 +2488,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#fused-multiply-add-for-stage-1-or-2"
       }
     ],
     "stage27Reviewers": [
@@ -6002,7 +6009,12 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#needs-consensus-pr-support-bigint-coercion-of-integers-expressed-as-exponential-notation-strings"
+      },
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#temperature-checks-relating-to-httpsgithubcomtc39proposal-bigint-from-exponential"
       }
     ]
   },
@@ -6026,7 +6038,12 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#map-take-for-stage-1-2-or-27"
+      },
+      {
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#continuation-map-take-for-stage-1-2-or-27"
       }
     ]
   },
@@ -6050,7 +6067,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#linear-matching"
       }
     ]
   },
@@ -12370,7 +12388,8 @@
     ],
     "presentations": [
       {
-        "date": "2026-07"
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#intldatetimeformat-alignment-with-other-standards"
       }
     ]
   },
