@@ -216,6 +216,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#import-defer-stage-3-updates"
+      },
+      {
         "date": "2026-03-10",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-10.md#import-defer-interaction-with-tc39ecma2623715-and-normative-pr-shield-dynamic-import-defer-against-promiseprototype-monkey-patch"
       },
@@ -1584,6 +1588,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#jsonparseimmutable"
+      },
+      {
         "date": "2026-03-10",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-03/march-10.md#jsonparseimmutable-update"
       },
@@ -1706,6 +1714,14 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#continuation-async-iterator-helpers-open-questions"
+      },
+      {
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#async-iterator-helpers-open-questions"
+      },
       {
         "date": "2025-11-19",
         "notesUrl": "https://github.com/tc39/notes/blob/main/meetings/2025-11/november-19.md#async-iterator-helpers-recapupdatepolyfill"
@@ -2401,6 +2417,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#duration-units-in-amount-and-intl-sequence-units"
+      },
       {
         "date": "2026-05-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#amount-for-stage-2"
@@ -3507,6 +3527,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#private-declarations"
+      },
+      {
         "date": "2019-03-28",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2019-03/mar-28.md#private-declarations-for-stage-1"
       },
@@ -3605,6 +3629,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#declarations-in-conditionals-for-stage-2-or-27"
+      },
       {
         "date": "2025-11-18",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-18.md#declarations-in-conditionals-for-stage-2"
@@ -3856,6 +3884,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#decimal-stage-1-update"
+      },
       {
         "date": "2025-05-28",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-05/may-28.md#decimal-stage-1-update"
@@ -5446,6 +5478,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-21",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-21.md#composites-update"
+      },
       {
         "date": "2025-11-19",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-19.md#composites-comparator-choice"
@@ -7460,6 +7496,10 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#needs-consensus-pr-make-promisetry-use-promiseresolve-in-non-error-case"
+      },
       {
         "date": "2024-10-09",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2024-10/october-09.md#promisetry-for-stage-4"
@@ -12330,6 +12370,10 @@
     ],
     "presentations": [
       {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#duration-units-in-amount-and-intl-sequence-units"
+      },
+      {
         "date": "2026-05-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#intl-sequence-units-for-stage-1-or-2"
       }
@@ -12510,6 +12554,22 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#needs-consensus-pr-normative-take-language-subtag-into-account-in-locale-hour-cycle-lookup"
+      },
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#needs-consensus-pr-normative-allow-localepgetnumberingsystems-to-return-1-item"
+      },
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#needs-consensus-pr-normative-dont-fall-back-to-default-locale-in-localepgetcollations"
+      },
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#needs-consensus-pr-normative-call-regionpreference-in-weekinfooflocale"
+      },
       {
         "date": "2025-11-18",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2025-11/november-18.md#intl-locale-info-api-for-stage-4"
