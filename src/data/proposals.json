@@ -2332,7 +2332,7 @@
     "name": "Curtailing the power of \"Thenables\"",
     "url": "https://github.com/tc39/proposal-thenable-curtailment",
     "specification": "ECMA-262",
-    "stage": "2",
+    "stage": "2.7",
     "authors": [
       {
         "kind": "delegate",
@@ -2346,6 +2346,14 @@
       }
     ],
     "presentations": [
+      {
+        "date": "2026-07-22",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-22.md#continuation-thenable-curtailment-for-27"
+      },
+      {
+        "date": "2026-07-20",
+        "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-07/july-20.md#thenable-curtailment-for-27"
+      },
       {
         "date": "2026-05-20",
         "notesUrl": "https://github.com/tc39/notes/blob/HEAD/meetings/2026-05/may-20.md#thenable-curtailment-status-update"
